@@ -11,8 +11,8 @@ import urllib
 import urllib2
 from urllib2 import urlopen, URLError, HTTPError
 import re
-
-
+"""
+#JPE
 #-------------------------------------------------------------------------------
 #--- (1) out
 #-------------------------------------------------------------------------------
@@ -58,7 +58,31 @@ for a in addresses:
         print year + name
 nameFile.close()
 absFile.close()
+"""
+#QJE
+#-------------------------------------------------------------------------------
+#--- (1) out
+#-------------------------------------------------------------------------------
+nameFile = open('namesQJE.txt', 'w')
+base = 'http://qje.oxfordjournals.org/content/'
 
+for vol in range(1,131):
+    for iss in range(1,5):
+        if vol==29 and iss==3:
+            print 'NO JOURNAL \n'
+        elif vol==31 and iss==1:
+            print 'NO JOURNAL \n'
+        else:
+            dir = base + str(vol) + '/' + str(iss) + '.toc'
+            source = urllib2.urlopen(dir).read()
+            papers = re.findall('(.*)doi:(.*)', source)
+            for p in papers:
+                result = re.split('\<.*?\>', p[0])
+                title = result[1]
+                print title
+                year = 1886 + vol
+                nameFile.write(str(year) + ' | ' + str(iss) + ' | ' + title +'\n')
+                
 #-------------------------------------------------------------------------------
 #--- (3) count 'fertility' in names and abstracts
 #-------------------------------------------------------------------------------
@@ -72,6 +96,14 @@ for line in open('namesJPE.txt', 'r'):
     fc = fc1 + fc2
     words = str(len(re.findall(r'\w+', line)))
     numFname.write(y+';'+str(fc)+';'+words+'\n')
+for line in open('namesQJE.txt', 'r'):
+    y = line.split('|')[0]
+    fc1=line.count('fertility')
+    fc2=line.count('Fertility')
+    fc = fc1 + fc2
+    words = str(len(re.findall(r'\w+', line)))
+    numFname.write(y+';'+str(fc)+';'+words+'\n')
+
 
 for line in open('abstractsJPE.txt', 'r'):
     y = line.split('|')[0]
