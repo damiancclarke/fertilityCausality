@@ -120,8 +120,10 @@ table [x=beta,y expr=\coordindex,x error=error]{#1};
 %===============================================================================
 %=== (4) Title, authors, data
 %===============================================================================
-\title{Causality and Fertility}
-\author{Damian Clarke}
+\title{Causality and Fertility\thanks{I thank Sonia Bhalotra, Paul Devereux and
+James Fenske for their useful comments and extended discussions.}}
+\author{Damian Clarke\thanks{Department of Economics, The University of Oxford.
+Contact: damian.clarke@economics.ox.ac.uk}}
 \date{\today}
 
 \begin{document}
@@ -134,13 +136,14 @@ table [x=beta,y expr=\coordindex,x error=error]{#1};
 Child-bearing decisions are not made in isolation.  They are taken in concert 
 with decisions regarding work, marriage, health investments and stocks, as well 
 as many other observable and non-observable considerations.  Drawing causal 
-inferences regarding the effect of child birth is complicated by these 
-endogenous factors.  This review article outlines the identification of causal
-estimates of fertilty, and the assumptions underlying the range of estimators
-and methodologies proposed in the economic, as well as the non-economic, 
-literature.
+inferences regarding the effect of child birth on family outcomes is complicated 
+by these endogenous factors.  This review article outlines the identification of 
+causal estimates of fertilty, and the assumptions underlying the range of 
+estimators and methodologies proposed in the economic literature.  A number of
+pitfalls are discussed, as well as their potential to bias our interpretation
+of the effect additional births have on children and parents.
 \end{abstract}
-
+\hspace{7mm} \textbf{JEL codes}: J13, D10, I18.
 
 \section{Introduction}
 Human decisions regarding births, and how these decisions affect individual 
@@ -191,7 +194,9 @@ quasi-experimental fertility shocks, or trying to artificially construct a
 treatment and control group using family members or other matching 
 methods.  In the sections which follow, I describe these methodologies, the 
 papers which propose and estimate them, and the identifying assumptions that
-motivate causality in each case.
+motivate causality in each case.  I also discuss common threats to inference
+in each case, and what, if anything, these threats imply with regards to the
+existing estimates in the fertility literature.
 
 Empirical considerations regarding the causal effects of fertility require the
 consideration of (at least) three questions: `Effects on what?', `Effects at
@@ -354,7 +359,7 @@ production and consumption were considered to motivate household decisions.
 
 These theories of ``demand for children'' gave rise to theoretical predictions 
 regarding household fertility decisions.  Perhaps most central to these is the
-quantitly--quality (QQ) trade-off, which posits that an inverse relationship
+quantity--quality (QQ) trade-off, which posits that an inverse relationship
 will exist between child quality and child quantity.  This relationship is
 suggested to exist given that children are a special composite ``good'', where 
 along with deciding how many are desired (an extensive decision), parents decide 
@@ -388,13 +393,11 @@ and determinants reaches far beyond the academic literature. These effects are
 frequently cited in policy documents drafted by governments and international 
 organisations when defining, classifying or justifying policy choices which have
 the potential to remarkably change fertility choices, and life courses, of 
-affected individuals.
-
-There exist a range of proclamations and charters defining reproductive rights
-for individuals.  As early as 1968, the United Nations Declaration of Human 
-Rights incorporated that ``[p]arents have a basic human right to determine 
-freely and responsibly the number and the spacing of their children'' 
-\citep{UN1968}, a statement echoed in many subsequent proclamations, 
+affected individuals. There exist a range of proclamations and charters defining 
+reproductive rights for individuals.  As early as 1968, the United Nations 
+Declaration of Human Rights incorporated that ``[p]arents have a basic human 
+right to determine freely and responsibly the number and the spacing of their 
+children'' \citep{UN1968}, a statement echoed in many subsequent proclamations, 
 including the Proclamation form the Cairo Program of Action in 1994, and in the 
 current World Health Organisation defintion of reproductive rights. 
 
@@ -507,8 +510,10 @@ case, as fertility choices may interact in a range of ways with many different
 unobserved characteristics of mothers or families.  Empirically, although it 
 largely seems to be the case that OLS estimates of the effect of fertility are 
 lower (more negative) than more credibly causal estimates, there are some cases, 
-particularly in more developed countries, where this is not the case. We return 
-to provide more details on these estimates in the sections which follow.
+particularly in more developed countries, where this is not the case (and recent 
+evidence from \citet{Myrskylaetal2009} suggests that declines in fertility with
+development may be reversed at some point). We return to provide more details on 
+these estimates in the sections which follow.
 
 %-------------------------------------------------------------------------------
 \subsection{Instrumental Variables}
@@ -564,7 +569,8 @@ estimation in a number of papers, where twin births are employed as instrumental
 variables.  Twin instruments have been employed in a range of contexts and
 to examine various different `quality' outcome variables of children. These 
 include \citet{Blacketal2005,Caceres2006,Lietal2008,Dayiogluetal2009,Sanhueza2009,
-Blacketal2010,Angristetal2010,FitzsimonsMalde2010} and \citet{SouzaPonczek2012}, 
+Blacketal2010,Angristetal2010,FitzsimonsMalde2010,MarteletodeSouza2012} and 
+\citet{SouzaPonczek2012}, 
 and focus on child quality measures including years of education, IQ, private 
 school enrolment, BMI and height, college completion and age at marriage.  The 
 evidence on the existence of a QQ trade-off in these studies is mixed, 
@@ -577,14 +583,16 @@ $Z$ truly is independent of $U$.  This has been questioned in a number of ways.
 \citet{RosenzweigZhang2009} suggest that the close birth-spacing of twins, and 
 the fact that twins have lower health stocks at birth \citep{Almondetal2005}
 means that parents may change behaviours to reinforce or compensate for intra-%
-household human capital differences.  While this can be tested directly, it 
-requires data on early life human capital endowments such as birthweight.  
-\citet{BhalotraClarke2015} question the exogeneity assumption in another way.
-They demonstrate that healthier mothers are more likely to take twin births
-to term, and at the same time that healthier mothers are more likely to have
-additional resources to invest in child quality later in life.  This critique is
-laid out and estimated in \citet{BhalotraClarke2015}.  At the very
-least however, both of these critiques will lead to predictable biases in 
+household human capital differences.  If parents act to compensate positive
+health endowments, they will invest more in larger non-twin children, and 
+estimates using twins will understate the magnitude of the trade-off (and 
+vice-versa if parents compensate for poor health endowments).  While this can 
+be tested directly, it requires data on early life human capital endowments such 
+as birthweight.  \citet{BhalotraClarke2015} question the exogeneity assumption 
+in another way. They demonstrate that healthier mothers are more likely to take 
+twin births to term, and at the same time that healthier mothers are more likely 
+to have additional resources to invest in child quality later in life.  At the 
+very least however, both of these critiques will lead to predictable biases in 
 estimates of $\beta$, resulting in bounds on the effect of fertility on child
 outcomes.
 
@@ -1023,8 +1031,8 @@ labour force participation \citep{AgueroMarks2008,AgueroMarks2011,ChunOh2002,
 Caceres2008,AngristEvans1998}, or earnings \citep{Caceres2006,Hotzetal1997,
 Jacobsenetal1999}.  A range of instruments has been proposed including twins,
 as in section \ref{Fsscn:kidIV} \citep{RosenzweigWolpin1980b,Jacobsenetal1999,
-BronarsGrogger1994}, gender mix \citep{AgueroMarks2008,AgueroMarks2011,
-ChunOh2002}, and fertility shocks \citep{Miller2011,Cristia2008,
+BronarsGrogger1994,Caceres2012}, gender mix \citep{AgueroMarks2008,
+AgueroMarks2011,ChunOh2002}, and fertility shocks \citep{Miller2011,Cristia2008,
 RosenzweigSchultz1987}.\footnote{\citet{Ribar1994} proposes three alternative
 exclusion restrictions (age at first period, availability of Ob/Gyn, and local
 abortion rates) for use in selection models.  While the identification 
