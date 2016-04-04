@@ -63,7 +63,7 @@
 \usepackage{pgfplotstable}
 \usepackage{filecontents}
 \usepackage[hypertexnames=false]{hyperref}
- \renewcommand{\familydefault}{\sfdefault}
+% \renewcommand{\familydefault}{\sfdefault}
 %===============================================================================
 %=== (2) Specific Instructions
 %===============================================================================
@@ -124,7 +124,7 @@ table [x=beta,y expr=\coordindex,x error=error]{#1};
 %===============================================================================
 \title{How Do Children Affect Families?\\ Fertility and Causality\thanks{I thank
     Sonia Bhalotra, Paul Devereux, James Fenske and Margaret Stevens for their
-    useful comments and extended discussions.}}
+    many useful comments and extended discussions.}}
 \author{Damian Clarke\thanks{Department of Economics, The University of Oxford.
 Contact: damian.clarke@economics.ox.ac.uk}}
 \date{\today}
@@ -145,7 +145,9 @@ involved in estimating the effect of additional child births on family outcomes,
 and the assumptions underlying the range of estimators and methodologies
 proposed in the economic literature.  The common pitfalls of these estimators
 are discussed, as well as their potential to bias our interpretation of the
-effect additional births have on children and parents.
+effect additional births have on children and parents, both in the existing
+literature and in future work in the face of changing patterns of child-bearing
+and child-rearing.
 \end{abstract}
 \hspace{7mm} \textbf{JEL codes}: J13, D10, I18.
 
@@ -196,8 +198,8 @@ treatment and control group using family members or other matching
 methods.  In the sections which follow, I describe these methodologies, the
 empirical results they have given rise to, and the identifying assumptions
 that motivate causality in each case.  I also discuss common threats to
-inference in each case, and what, if anything, these threats imply with
-regards to the existing estimates in the fertility literature.
+inference, and what, if anything, these threats imply with regard to the
+existing estimates in the fertility literature.
 
 Empirical considerations regarding the causal effects of fertility require the
 consideration of (at least) three questions: `Effects on what?', `Effects at
@@ -207,7 +209,7 @@ children.
 
 Regarding the first question, the theoretical and empirical microeconomic 
 literature has hypothesised that marginal births may have causal implications 
-for many individual-level outcomes.  This includes effects on children: their 
+for many individual-level outcomes.  This includes effects on children:\ their 
 health indicators, cognitive and non-cognitive achievements, long-term labour 
 market outcomes, education inputs, and social outcomes such as age at marriage 
 and crime incidence; as well as effects on parents. Parental outcomes often 
@@ -221,7 +223,7 @@ Human fertility decisions exist at two (very different) margins.  The choice of
 whether or not to have a child (the extensive margin), and, conditional on 
 choosing to have any children, the decision regarding \emph{how many} births
 to have (the intensive margin).  The nature of links between fertility decisions
-and outcomes vary considerably when considering the intensive and the extensive
+and outcomes vary substantially when considering the intensive and the extensive
 margin.  The consensus in the literature is that the causal effects are 
 certainly not a linear function of births, with important non-linearities, and 
 indeed non-monotonic relationships, described between fertility and (some) of 
@@ -394,7 +396,7 @@ theory conserved the most important predictions from Becker and coauthors'
 models, while also opening new considerations regarding the determinants and 
 effects of fertility.  Perhaps most importantly, these theories opened the 
 door to external determinants of fertility such as fertility control 
-technologies as explicit determinants which may have a direct effect over 
+technologies as explicit determinants which may have a direct effect on
 fertility outcomes.
 
 The search for the theoretical and empirical implications of fertility choices
@@ -507,21 +509,21 @@ may be.  Notable exceptions include \citet{Qian2009}, who suggests joint
 parental preferences for more education and fewer children as well as optimal
 stopping rules which depend on the quality of the first child, and 
 \citet{Blacketal2010}, who additionally note that family size effects are 
-confounded with birth order effects.  Indeed there are a number of reasons one
-could use to suggest bias.  These include parental education, discount rates,
-maternal health, or network effects driving both fertility and child quality.  
-Generally it seems likely that these factors will induce a negative bias in OLS
-estimates of the effect of fertility, given that factors which lead to fewer 
-births (contraceptive knowledge, opportunity cost of time, aspirations, and so 
-forth) also seem likely to drive greater investments in children who are 
-eventually born.  However, there is no reason why this theoretically must be the
-case, as fertility choices may interact in a range of ways with many different 
-unobserved characteristics of mothers or families.  Empirically, although it 
-largely seems to be the case that OLS estimates of the effect of fertility are 
-lower (more negative) than more credibly causal estimates, there are some cases, 
-particularly in more developed countries, where this is not the case (and recent 
-evidence from \citet{Myrskylaetal2009} suggests that declines in fertility with
-development may be reversed at some point). 
+confounded with birth order effects.  Indeed there are a number of reasons why
+one may be concerned that bias remains.  These include parental education,
+discount rates, maternal health, or network effects driving both fertility and
+child quality. Generally it seems likely that these factors will induce a
+negative bias in OLS estimates of the effect of fertility, given that factors
+which lead to fewer births (contraceptive knowledge, opportunity cost of time,
+aspirations, and so forth) also seem likely to drive greater investments in
+children who are eventually born.  However, there is no reason why this
+theoretically must be the case, as fertility choices may interact in a range of
+ways with many different unobserved characteristics of mothers or families.
+Empirically, although it largely seems to be the case that OLS estimates of the
+effect of fertility are lower (more negative) than more credibly causal
+estimates, there are some cases, particularly in more developed countries, where
+this is not the case (and recent evidence from \citet{Myrskylaetal2009} suggests
+that declines in fertility with development may be reversed at some point). 
 
 %-------------------------------------------------------------------------------
 \subsection{Instrumental Variables}
@@ -693,7 +695,7 @@ this suggests a positive bias in IV estimates of $\beta$.
 \multicolumn{4}{p{12.9cm}}{\begin{footnotesize}\textsc{Notes:} In the case that 
 various samples are reported in the papers, the pooled estimate for female and
 male children of all women from the most recent time period is reported. In the 
-case of twins estimates, the ``3+'' sample (twins at third birth as instrument
+case of twins estimates, the ``3+'' sample (twins at third birth as an instrument
 for fertility in  families with at least three births) is
 reported.  Where the original studies report $p$-values associated with estimates 
 rather than standard errors, these are converted into standard errors for 
@@ -736,12 +738,13 @@ be compared. Those who receive coverage from the fertility reform are considered
 treated, and those who don't are considered as controls.  If reforms are truly 
 put in place for reasons entirely divorced from $U$, causal conclusions can be 
 drawn regarding the effect of the reform.  Typically the effect of reforms is 
-estimated using difference-in-differences (DD).  This compares pre-reform 
-differences between treated and control units with post-reform differences, 
-inferring that any change in the level of differences is driven by the reform, 
-or stated in another way, that \emph{no} differential and simultaneously 
-occurring phenomena seperate treatments from controls.  This is the well known 
-`parallel trends assumption' and is central to this line of inference.
+estimated using difference-in-difference (DD) estimators.  This compares
+pre-reform differences between treated and control units with post-reform
+differences, inferring that any change in the level of differences is driven by
+the reform, or stated in another way, that \emph{no} differential and
+simultaneously occurring phenomena seperate treatments from controls.  This is
+the well known `parallel trends assumption' and is central to this line of
+inference.
 
 These studies can be broadly split into two groups: those which examine the
 effect of public policies or other natural experiments on fertility itself,
@@ -854,10 +857,10 @@ despite being plausibly causal in both cases.
 
 Despite not directly estimating the causal effect of fertility on child 
 outcomes, a number of other contraceptive-based natural experiment papers
-estimate the effect of the natural experiment directly on child outcomes.
-This reduced form technique provides an estimate of the numerator of the ratio
-in (\ref{Feqn:Wald}), and so can be thought of as an unscaled estimate of
-the effect of fertility.  Papers of this type include \citet{PopEleches2006} 
+estimate the effect of the natural experiment on child outcomes. This reduced
+form technique provides an estimate of the numerator of the ratio in
+(\ref{Feqn:Wald}), and so can be thought of as an unscaled estimate of the
+effect of fertility.  Papers of this type include \citet{PopEleches2006} 
 who finds that the illegalisation of abortion in Romania worsens child 
 education and labour market outcomes (conditional on parental characteristics),
 \citet{Bailey2013} who reports that US contraceptive pill laws had long-%
@@ -904,7 +907,7 @@ interest is a bounds estimate, generally with policy reforms this will not be
 the case.  Given the large cost that large contraceptive policies entail, it
 is important to be able to identify the precise effect of competing options. 
 As a result, concerns such as these are often examined empirically, as is the 
-case in \citet{Christensen2012}.
+case in \citet{Christensen2012} and \citet{BentancorClarke2014}.
 
 Finally, a number of other natural experiments have been used in the 
 literature to examine the effect of fertility on child outcomes.\footnote{
@@ -916,7 +919,7 @@ fertility decisions of households, and they find that increases in quality
 do lead to fertility declines in line with the QQ model discussed earlier.}
 Perhaps most notably among these, \citet{Qian2009} uses the relaxation of 
 China's one child policy to estimate the causal effect of movements from one 
-child to two child households.  This study is unique for two reasons: the low 
+child to two child households.  This study is unique for two reasons:\ the low 
 parity shift of the experiment (an expansion from one to two children), and the 
 fact that it finds that higher fertility in this case \emph{increases} child 
 schooling outcomes, especially among households who have two children of the 
@@ -968,7 +971,7 @@ natural experiments, structural estimation, or a combination of methods.
 
 \subsection{Natural Experiments}
 \label{Fsscn:motherNExp}
-Frequently, natural experiments experiments of the type discussed in section 
+Frequently, natural experiments of the type discussed in section
 \ref{Fsscn:kidNExp} are leveraged to quantify the effect of fertility on 
 parent outcomes.  Estimation is based on the fact that---at the level of the
 family---living in treatment or non-treatment areas is a randomly assigned
@@ -1030,10 +1033,10 @@ The use of instrumental variables to examine the effect of fertility on
 \emph{mothers'} outcomes (rather than children's outcomes as described
 in section \ref{Fsscn:kidIV}) follows a similar logic to that outlined in
 equation (\ref{Feqn:Wald}).  An external variable which has strong effects
-on fertility but no direct effects on the outcome of interest except via its
-effect on fertility can be used to drive causal estimates.  Instrumental 
-variable estimates are a popular methodology employed to determine the 
-effect of fertility on mothers.
+on fertility but no direct effects on the outcome of interest \emph{except}
+via its effect on fertility can be used to drive causal estimates.
+Instrumental variable estimates are a popular methodology employed to
+determine the effect of fertility on mothers.
 
 Outcome variables of interest are typically related to parental labour 
 force outcomes,\footnote{Largely, these papers focus on maternal labour
@@ -1163,7 +1166,7 @@ While this topic has a long and rich history, its future is arguably just as
 rich. Changing patterns of childbearing mean that children are now born later,
 at lower parities, and with increasing planning and use of assisted
 reproductive technologies in many parts of the world.  The iterpretation of
-how these broad demographic shifts affect family outcomes requires an
+how these broad demographic shifts affect family outcomes will require an
 extension of the existing estimates and techniques to new life circumstances
 and situations.
 
